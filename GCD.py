@@ -1,6 +1,10 @@
 #Owner: Overrideveloper
 #Description: GCD Program 
 
+from memory_profiler import memory_usage
+from datetime import datetime
+startTime = datetime.now()
+
 #Creating a function that uses two parameters 
 def GreatestCommonDivisor(x, y):
 
@@ -26,3 +30,11 @@ output = GreatestCommonDivisor (GreatestCommonDivisor (GreatestCommonDivisor(Gre
 print ("The Greatest Common Divisor of the five numbers is: ")
 
 print (output)
+
+print ("The execution time is ",(datetime.now()- startTime))
+
+mem_usage = memory_usage(GreatestCommonDivisor)
+
+print('Memory usage (in chunks of .1 seconds): %s'% mem_usage)
+
+print('Maximum memory usage: %s'% max(mem_usage))
